@@ -1,0 +1,6 @@
+ clients  connected   refused   attempts   other  queries/s     on_mysql proxy_clients proxy_backend  KB/thread
+                    (clients) (err_1040)
+    1000        998         2         43       0        329          998            -            -         86
+         last error: (1040, 'Too many connections')
+    2000        999      1001      20023       0        326            0            -            -          -
+         last error: (1040, 'Too many connections')

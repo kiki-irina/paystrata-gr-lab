@@ -1,0 +1,5 @@
+clients_target,clients_connected,clients_refused,errors_1040,other_errors,queries_per_s,mysql_app_conns,proxy_client_conns,proxy_backend_conns,kb_per_thread_avg,kb_per_thread_max
+1000,1000,0,0,0,338,15,1000,15,65,67
+2000,2000,0,0,0,670,22,2000,22,41,61
+5000,5000,0,0,0,1670,55,5000,55,46,69
+10000,682,9318,0,29689,79,73,3148,124,,

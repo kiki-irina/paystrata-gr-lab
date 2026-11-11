@@ -1,0 +1,2 @@
+1794399650 CRASH: docker kill mysql1 (the primary)
+1794399672 AUTOMATIC ELECTION: new primary is mysql2 (no DBA action)

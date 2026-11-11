@@ -1,0 +1,45 @@
+
+---- LEVEL 1000: 1000 clients try to connect and stay connected ----
+   [RESULT] connected and kept open : 1000 of 1000
+   [RESULT] not connected (refused) : 0   (error 1040 raised 0 times: each client retries, so attempts >> clients)
+   [RESULT] other errors            : 0
+   [RESULT] queries per second      : 338
+   [RESULT] connections seen inside mysql1 (app users): 15
+   [RESULT] ProxySQL: 1000 client connections in, 15 connections to MySQL
+   [RESULT] MySQL memory per thread : 65 KB
+
+---- LEVEL 2000: 2000 clients try to connect and stay connected ----
+   [RESULT] connected and kept open : 2000 of 2000
+   [RESULT] not connected (refused) : 0   (error 1040 raised 0 times: each client retries, so attempts >> clients)
+   [RESULT] other errors            : 0
+   [RESULT] queries per second      : 670
+   [RESULT] connections seen inside mysql1 (app users): 22
+   [RESULT] ProxySQL: 2000 client connections in, 22 connections to MySQL
+   [RESULT] MySQL memory per thread : 41 KB
+
+---- LEVEL 5000: 5000 clients try to connect and stay connected ----
+   [RESULT] connected and kept open : 5000 of 5000
+   [RESULT] not connected (refused) : 0   (error 1040 raised 0 times: each client retries, so attempts >> clients)
+   [RESULT] other errors            : 0
+   [RESULT] queries per second      : 1670
+   [RESULT] connections seen inside mysql1 (app users): 55
+   [RESULT] ProxySQL: 5000 client connections in, 55 connections to MySQL
+   [RESULT] MySQL memory per thread : 46 KB
+
+---- LEVEL 10000: 10000 clients try to connect and stay connected ----
+   [RESULT] connected and kept open : 682 of 10000
+   [RESULT] not connected (refused) : 9318   (error 1040 raised 0 times: each client retries, so attempts >> clients)
+   [RESULT] other errors            : 29689
+   [RESULT] queries per second      : 79
+   [RESULT] connections seen inside mysql1 (app users): 73
+   [RESULT] ProxySQL: 3148 client connections in, 124 connections to MySQL
+   [RESULT] MySQL memory per thread : - KB
+   [RESULT] last error              : TimeoutError 
+
+==== SUMMARY OF THE RAMP ====
+ clients  connected    refused      err1040   other  queries/s  on_mysql1      proxy_in   proxy_to_db
+    1000       1000          0            0       0        338         15          1000            15
+    2000       2000          0            0       0        670         22          2000            22
+    5000       5000          0            0       0       1670         55          5000            55
+   10000        682       9318            0   29689         79         73          3148           124
+(refused = clients that never got a connection; err1040 = refusals counted by MySQL, higher because clients retry)
